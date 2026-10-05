@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Text & Speech Emotion Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>✦</span> EmotionAI
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#analyzer">Analyzer</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </div>
+
+        <a href="#analyzer" class="nav-button">Try Analyzer</a>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                ✨ AI-Powered Emotion Intelligence
+            </div>
+
+            <h1>
+                Understand
+                <span>Emotions</span>
+                Through Text & Voice
+            </h1>
+
+            <p>
+                Analyze written text and spoken words to identify
+                sentiment, emotions, keywords, and overall communication tone.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#analyzer" class="primary-btn">
+                    Start Analysis →
+                </a>
+
+                <a href="#features" class="secondary-btn">
+                    Explore Features
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- Hero Card -->
+        <div class="hero-card">
+
+            <div class="card-header">
+                <div>
+                    <small>LIVE ANALYSIS</small>
+                    <h3>Emotion Overview</h3>
+                </div>
+
+                <div class="status">
+                    ● Active
+                </div>
+            </div>
+
+            <div class="emotion-circle">
+                <div>
+                    <strong>82%</strong>
+                    <span>Positive</span>
+                </div>
+            </div>
+
+            <div class="emotion-bars">
+
+                <div class="bar-item">
+                    <div>
+                        <span>Positive</span>
+                        <b>82%</b>
+                    </div>
+                    <div class="bar">
+                        <div class="bar-fill positive"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div>
+                        <span>Neutral</span>
+                        <b>12%</b>
+                    </div>
+                    <div class="bar">
+                        <div class="bar-fill neutral"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div>
+                        <span>Negative</span>
+                        <b>6%</b>
+                    </div>
+                    <div class="bar">
+                        <div class="bar-fill negative"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Analyzer Section -->
+    <section class="analyzer-section" id="analyzer">
+
+        <div class="section-heading">
+
+            <div class="tag">
+                AI ANALYZER
+            </div>
+
+            <h2>
+                Analyze Your
+                <span>Content</span>
+            </h2>
+
+            <p>
+                Enter text or use your microphone to discover the emotional
+                meaning behind your communication.
+            </p>
+
+        </div>
+
+
+        <div class="analyzer-container">
+
+            <!-- Text Analyzer -->
+            <div class="analyzer-card">
+
+                <div class="card-title">
+                    <div class="icon">📝</div>
+
+                    <div>
+                        <h3>Text Sentiment Analysis</h3>
+                        <p>Analyze the emotional tone of your text.</p>
+                    </div>
+                </div>
+
+
+                <textarea
+                    id="textInput"
+                    placeholder="Type or paste your message here...">
+                </textarea>
+
+
+                <div class="text-info">
+                    <span id="charCount">0 characters</span>
+                    <span>AI Text Analysis</span>
+                </div>
+
+
+                <button class="analyze-btn" onclick="analyzeText()">
+                    Analyze Text →
+                </button>
+
+
+                <div class="result-box" id="textResult">
+
+                    <div class="result-placeholder">
+                        <div>🔍</div>
+                        <p>Your sentiment result will appear here.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Speech Analyzer -->
+            <div class="analyzer-card">
+
+                <div class="card-title">
+
+                    <div class="icon microphone">
+                        🎙️
+                    </div>
+
+                    <div>
+                        <h3>Speech Emotion Analysis</h3>
+                        <p>Use your microphone to analyze speech.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="speech-area">
+
+                    <div class="mic-circle" id="micCircle">
+                        🎤
+                    </div>
+
+                    <h3 id="speechStatus">
+                        Ready to Listen
+                    </h3>
+
+                    <p>
+                        Click the button and speak clearly.
+                    </p>
+
+                    <button
+                        class="record-btn"
+                        onclick="startSpeech()"
+                        id="recordButton">
+
+                        Start Recording
+
+                    </button>
+
+                </div>
+
+
+                <div class="result-box" id="speechResult">
+
+                    <div class="result-placeholder">
+                        <div>🎧</div>
+                        <p>
+                            Speech emotion results will appear here.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="features-section" id="features">
+
+        <div class="section-heading">
+
+            <div class="tag">
+                POWERFUL FEATURES
+            </div>
+
+            <h2>
+                One Platform,
+                <span>Multiple Insights</span>
+            </h2>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">💬</div>
+
+                <h3>Sentiment Detection</h3>
+
+                <p>
+                    Identify whether the given text expresses
+                    positive, negative, or neutral sentiment.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🎭</div>
+
+                <h3>Emotion Recognition</h3>
+
+                <p>
+                    Detect emotions such as happiness, sadness,
+                    anger, fear, and surprise.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🎙️</div>
+
+                <h3>Speech Analysis</h3>
+
+                <p>
+                    Capture speech using your microphone and
+                    analyze the spoken content.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🔑</div>
+
+                <h3>Keyword Insights</h3>
+
+                <p>
+                    Extract important keywords and understand
+                    the main topics in your content.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📊</div>
+
+                <h3>Visual Results</h3>
+
+                <p>
+                    View analysis results through simple and
+                    attractive visual indicators.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">⚡</div>
+
+                <h3>Real-Time Analysis</h3>
+
+                <p>
+                    Get quick feedback while analyzing your
+                    text and speech content.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+
+        <div class="about-content">
+
+            <div class="tag">
+                ABOUT THE PROJECT
+            </div>
+
+            <h2>
+                Making Communication
+                <span>Understandable</span>
+            </h2>
+
+            <p>
+                Text Sentiment and Speech Emotion Analyzer is an
+                AI-based application designed to understand emotions
+                expressed through written and spoken communication.
+            </p>
+
+            <p>
+                The system analyzes text sentiment and speech input
+                to provide meaningful insights into the user's
+                emotional tone.
+            </p>
+
+            <div class="about-stats">
+
+                <div>
+                    <strong>2</strong>
+                    <span>Analysis Modes</span>
+                </div>
+
+                <div>
+                    <strong>6+</strong>
+                    <span>Emotion Types</span>
+                </div>
+
+                <div>
+                    <strong>AI</strong>
+                    <span>Powered Insights</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            ✦ EmotionAI
+        </div>
+
+        <p>
+            Text Sentiment & Speech Emotion Analyzer
+        </p>
+
+        <div class="footer-line"></div>
+
+        <p class="copyright">
+            © 2026 EmotionAI. Designed for intelligent communication.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
